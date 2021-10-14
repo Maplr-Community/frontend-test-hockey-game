@@ -6,7 +6,6 @@
   <br />
 </p>
 
-
 ## Table des matières
 
 - [Objectif du test](#objectif-du-test)
@@ -22,12 +21,12 @@
 
 ## Objectif du test
 
-Votre objectif pour ce test est de créer une application web pour ajouter et obtenir les joueurs et les informations de l'équipe de Hockey des Canadiens du Montréal. Le but est donc d'avoir la composition de cette équipe pour chaque année ou elle a participé à la Ligue Nationale de Hockey.
+Votre objectif pour ce test est de créer une application web pour ajouter et obtenir les joueurs et les informations de l'équipe de Hockey des Canadiens du Montréal. Le but est donc d'avoir la composition de cette équipe pour chaque année où elle a participé à la Ligue Nationale de hockey.
 
-### **Vous devez créer les fonctionnalitées suivantes :**
+### **Vous devez créer les fonctionnalités suivantes :**
 
-- Listing des informations de l'equipe et des joueurs en fonction de l'année.
-- Possibilité d'ajouter un joueur dans l'equipe d'une année.
+- Listing des informations de l'équipe et des joueurs en fonction de l'année.
+- Possibilité d'ajouter un joueur dans l'équipe d'une année.
 - Possibilité de mettre un joueur en capitaine.
 
 ## **Présomptions**
@@ -36,9 +35,9 @@ Votre objectif pour ce test est de créer une application web pour ajouter et ob
 
 ## Critères
 
-- Les 3 fonctionnalitées
-- Qualité du code
-- Utilisation des meilleurs pratiques de développement
+- Les 3 fonctionnalités.
+- Qualité du code.
+- Utilisation des meilleurs pratiques de développement.
 
 ## Outils à utiliser
 
@@ -79,14 +78,28 @@ Celle-ci se retrouve dans le dossier **postman** du projet.
 ### GET /api/team/{year}
 
 - Requête: Year dans l'URI
-
 - Réponse: Objet Team (Voir modèle ci-dessus)
-
 - Status: 200 OK
 
-  http://localhost:8080/api/team/2020 { "id":2, "coach":"Dominique Ducharme", "year":"2020", "players":[ { "number":31, "name":"Carey", "lastname":"Price", "position":"goaltender" }, { "number":14, "name":"Nick", "lastname":"Suzuki", "position":"forward" }, { "number":15, "name":"Jesperi", "lastname":"Kotkaniemi", "position":"forward" }, { "number":71, "name":"Jake", "lastname":"Evans", "position":"forward" }, { "number":27, "name":"Alexander", "lastname":"Romanov", "position":"defenseman" }, { "number":6, "name":"Shea", "lastname":"Weber", "position":"defenseman", "isCaptain" : true } ] }
+```
+http://{api url}/api/team/2020 --header "Content-Type:application/json"
 
-  http://localhost:8080/api/team/2019 { "id":1, "coach":"Dominique Ducharme", "year":"2019", "players":[ { "number":31, "name":"Carey", "lastname":"Price", "position":"goaltender" }, { "number":14, "name":"Nick", "lastname":"Suzuki", "position":"forward" }, { "number":15, "name":"Jesperi", "lastname":"Kotkaniemi", "position":"forward" }, { "number":71, "name":"Jake", "lastname":"Evans", "position":"forward" }, { "number":27, "name":"Alexander", "lastname":"Romanov", "position":"defenseman" }, { "number":6, "name":"Shea", "lastname":"Weber", "position":"defenseman", "isCaptain" : true } ] }
+{
+    "id": 1,
+    "coach": "Dominique Ducharme"
+    "year" : 2020
+    "players": [
+        {
+            "number": 99,
+            "name": "John",
+            "lastname": "Doe",
+            "position": "defenseman",
+            "isCaptain" : false
+        }
+        [...]
+    ]
+}
+```
 
 ### POST /api/team/{Year}
 
@@ -95,7 +108,7 @@ Celle-ci se retrouve dans le dossier **postman** du projet.
 - Status: 201 CREATED
 
 ```
-http://localhost:8080/api/player --header "Content-Type:application/json"
+http://{api url}/api/player/2020 --header "Content-Type:application/json"
 
 {
   "number":99,
@@ -106,11 +119,23 @@ http://localhost:8080/api/player --header "Content-Type:application/json"
 }
 ```
 
-### PUT /api/player/captain/{ID}
+### PUT /api/player/{ID}/captain/
 
 - Requête: ID du joueur dans l'URI
 - Réponse: Objet Player
 - Status: 200 OK
+
+```
+http://{api url}/api/player/9/captain
+
+{
+  "number":99,
+  "name":"Antonin",
+  "lastname":"Bouscarel",
+  "position":"forward",
+  "isCaptain" : true
+}
+```
 
 ## Soumettre le test
 
