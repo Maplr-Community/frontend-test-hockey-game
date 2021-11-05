@@ -13,10 +13,7 @@
 - [Critères](#critères)
 - [Outils à utiliser](#outils-à-utiliser)
 - [Modèle](#modèle)
-- [API](#api)
-  - [GET /api/team/{year}](#GET-/api/team/{year})
-  - [POST /api/team/{Year}](#POST-/api/team/{year})
-  - [PUT /api/player/captain/{ID}](#PUT-/api/player/captain/{ID})
+- [Datas](#datas)
 - [Soumettre le test](#soumettre-le-test)
 
 ## Objectif du test
@@ -67,75 +64,9 @@ Team
 }
 ```
 
-## API
+## Datas
 
-Nous vous fournissons une api disponible ici : **{api url}**
-
-Vous pouvez utiliser la collection postman incluse dans le projet si vous désirez tester l'API.
-
-Celle-ci se retrouve dans le dossier **postman** du projet.
-
-### GET /api/team/{year}
-
-- Requête: Year dans l'URI
-- Réponse: Objet Team (Voir modèle ci-dessus)
-- Status: 200 OK
-
-```
-http://{api url}/api/team/2020 --header "Content-Type:application/json"
-
-{
-    "id": 1,
-    "coach": "Dominique Ducharme"
-    "year" : 2020
-    "players": [
-        {
-            "number": 99,
-            "name": "John",
-            "lastname": "Doe",
-            "position": "defenseman",
-            "isCaptain" : false
-        }
-        [...]
-    ]
-}
-```
-
-### POST /api/team/{Year}
-
-- Requête: Objet Joueur dans le body
-- Réponse: Objet Joueur crée
-- Status: 201 CREATED
-
-```
-http://{api url}/api/player/2020 --header "Content-Type:application/json"
-
-{
-  "number":99,
-  "name":"Antonin",
-  "lastname":"Bouscarel",
-  "position":"forward",
-  "isCaptain" : false
-}
-```
-
-### PUT /api/player/{ID}/captain/
-
-- Requête: ID du joueur dans l'URI
-- Réponse: Objet Player
-- Status: 200 OK
-
-```
-http://{api url}/api/player/9/captain
-
-{
-  "number":99,
-  "name":"Antonin",
-  "lastname":"Bouscarel",
-  "position":"forward",
-  "isCaptain" : true
-}
-```
+Nous vous fournirons un jeux de données disponible à la racine du projet au format JSON (`data.json`)
 
 ## Soumettre le test
 
