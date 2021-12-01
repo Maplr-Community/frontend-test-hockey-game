@@ -41,6 +41,7 @@ Votre objectif pour ce test est de créer une application web pour ajouter et ob
 - Framework JS au choix (react, angular, vues etc...)
 - Framework UI au choix (Bootstrap, antd, tailwindcss etc...) (Optionnel)
 - Typescript (Optionnel)
+- Tests unitaire (Optionnel)
 
 ## Modèle
 
